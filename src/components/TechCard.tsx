@@ -3,10 +3,11 @@ import type { Technology } from '../types'
 
 type TechCardProps = {
 	tech: Technology
+	isAdded: boolean
 	onAdd: (tech: Technology) => void
 }
 
-const TechCard = ({ tech, onAdd }: TechCardProps) => {
+const TechCard = ({ tech, isAdded, onAdd }: TechCardProps) => {
 	return (
 		<div className='border border-gray-200 rounded-xl p-5 flex flex-col'>
 			<div className='flex items-start justify-between'>
@@ -30,9 +31,14 @@ const TechCard = ({ tech, onAdd }: TechCardProps) => {
 
 			<button
 				onClick={() => onAdd(tech)}
-				className='mt-4 bg-gray-900 text-white text-sm font-medium py-2 rounded-lg'
+				disabled={isAdded}
+				className={
+					isAdded
+						? 'mt-4 bg-gray-100 text-gray-400 text-sm font-medium py-2 rounded-lg cursor-not-allowed'
+						: 'mt-4 bg-gray-900 text-white text-sm font-medium py-2 rounded-lg'
+				}
 			>
-				Add to Stack
+				{isAdded ? 'Added' : 'Add to Stack'}
 			</button>
 		</div>
 	)

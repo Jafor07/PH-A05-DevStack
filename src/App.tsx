@@ -8,7 +8,7 @@ import type { Technology } from './types'
 
 const App = () => {
 	const [technologies, setTechnologies] = useState<Technology[]>([])
-	const [selected] = useState<Technology[]>([])
+	const [selected, setSelected] = useState<Technology[]>([])
 	const [loading, setLoading] = useState(true)
 
 	useEffect(() => {
@@ -18,17 +18,18 @@ const App = () => {
 			.finally(() => setLoading(false))
 	}, [])
 
-	// stub handlers for now - real add/remove logic comes in Part 9
 	const handleAdd = (tech: Technology) => {
-		console.log('add clicked:', tech.name)
+		const alreadyAdded = selected.some((item) => item.id === tech.id)
+		if (alreadyAdded) return
+		setSelected([...selected, tech])
 	}
 
 	const handleRemove = (id: string) => {
-		console.log('remove clicked:', id)
+		setSelected(selected.filter((item) => item.id !== id))
 	}
 
 	const handleRemoveAll = () => {
-		console.log('remove all clicked')
+		setSelected([])
 	}
 
 	return (
@@ -49,7 +50,13 @@ const App = () => {
 						<p>Loading technologies...</p>
 					) : (
 						<MainLayout
-							left={<TechList technologies={technologies} onAdd={handleAdd} />}
+							left={
+								<TechList
+									technologies={technologies}
+									selectedIds={selected.map((item) => item.id)}
+									onAdd={handleAdd}
+								/>
+							}
 							right={
 								<Sidebar
 									selected={selected}
