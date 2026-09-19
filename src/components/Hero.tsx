@@ -9,16 +9,18 @@ const Hero = () => {
 					<span className='text-brand-gradient'>Development Stack</span>
 				</h1>
 
-				<p className='mt-5 text-gray-600 max-w-md'>
+				<p className='mt-5 text-gray-600 max-w-lg'>
 					Explore frontend, backend, database, and tooling options, compare
-					them side by side, and put together the stack that fits your next project.
+					them side by side, and put together the stack that fits your
+					<br />
+					next project.
 				</p>
 
 				<div className='mt-8 flex flex-wrap items-center gap-4'>
-					<button className='brand-gradient text-white font-medium px-6 py-3 rounded-full'>
+					<button className='brand-gradient text-white font-medium px-6 py-3 rounded-full hover:opacity-90 transition-opacity'>
 						Explore Technologies
 					</button>
-					<button className='border border-gray-300 text-gray-700 font-medium px-6 py-3 rounded-full'>
+					<button className='border border-gray-300 text-gray-700 font-medium px-6 py-3 rounded-full hover:bg-gray-50 transition-colors'>
 						Learn More
 					</button>
 				</div>

@@ -9,7 +9,7 @@ type TechCardProps = {
 
 const TechCard = ({ tech, isAdded, onAdd }: TechCardProps) => {
 	return (
-		<div className='border border-gray-200 rounded-xl p-5 flex flex-col'>
+		<div className='border border-gray-200 rounded-xl p-5 flex flex-col hover:shadow-md transition-shadow'>
 			<div className='flex items-start justify-between'>
 				<img className='h-10 w-10' src={tech.icon} alt={tech.name} />
 				<span className='text-xs font-medium bg-gray-100 text-gray-600 px-2 py-1 rounded-full'>
@@ -35,7 +35,7 @@ const TechCard = ({ tech, isAdded, onAdd }: TechCardProps) => {
 				className={
 					isAdded
 						? 'mt-4 bg-gray-100 text-gray-400 text-sm font-medium py-2 rounded-lg cursor-not-allowed'
-						: 'mt-4 bg-gray-900 text-white text-sm font-medium py-2 rounded-lg'
+						: 'mt-4 bg-gray-900 text-white text-sm font-medium py-2 rounded-lg hover:bg-gray-800 transition-colors'
 				}
 			>
 				{isAdded ? 'Added' : 'Add to Stack'}

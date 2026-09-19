@@ -6,6 +6,7 @@ import Hero from './components/Hero'
 import TechList from './components/TechList'
 import Sidebar from './components/Sidebar'
 import MainLayout from './components/MainLayout'
+import Footer from './components/Footer'
 import type { Technology } from './types'
 
 const App = () => {
@@ -78,6 +79,7 @@ const App = () => {
 					)}
 				</div>
 			</section>
+				<Footer />
 		</div>
 	)
 }

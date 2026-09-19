@@ -16,7 +16,7 @@ const Navbar = () => {
 				<ul className='hidden md:flex items-center gap-8 text-sm font-medium text-gray-700'>
 					{links.map((link) => (
 						<li key={link}>
-							<a href='#'>{link}</a>
+							<a href='#' className='hover:text-pink-500 transition-colors'>{link}</a>
 						</li>
 					))}
 				</ul>
@@ -24,7 +24,7 @@ const Navbar = () => {
 				{/* desktop auth buttons */}
 				<div className='hidden md:flex items-center gap-4'>
 					<button className='text-sm font-medium text-gray-700'>Sign In</button>
-					<button className='brand-gradient text-white text-sm font-medium px-5 py-2 rounded-full'>
+					<button className='brand-gradient text-white text-sm font-medium px-5 py-2 rounded-full hover:opacity-90 transition-opacity'>
 						Sign Up
 					</button>
 				</div>

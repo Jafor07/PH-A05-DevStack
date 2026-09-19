@@ -33,7 +33,7 @@ const Sidebar = ({ selected, onRemove, onRemoveAll }: SidebarProps) => {
 									<p className='text-xs text-gray-500'>{tech.category}</p>
 								</div>
 							</div>
-							<button onClick={() => onRemove(tech.id)} aria-label={`Remove ${tech.name}`}>
+							<button onClick={() => onRemove(tech.id)} aria-label={`Remove ${tech.name}`} className='hover:text-red-500 transition-colors'>
 								<FiX className='text-gray-400' />
 							</button>
 						</li>
@@ -44,7 +44,7 @@ const Sidebar = ({ selected, onRemove, onRemoveAll }: SidebarProps) => {
 			{selected.length > 0 && (
 				<button
 					onClick={onRemoveAll}
-					className='mt-5 w-full border border-red-200 text-red-500 text-sm font-medium py-2 rounded-lg'
+					className='mt-5 w-full border border-red-200 text-red-500 text-sm font-medium py-2 rounded-lg hover:bg-red-50 transition-colors'
 				>
 					Remove All
 				</button>
