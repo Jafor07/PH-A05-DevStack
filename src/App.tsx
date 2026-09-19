@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import TechList from './components/TechList'
@@ -20,20 +22,28 @@ const App = () => {
 
 	const handleAdd = (tech: Technology) => {
 		const alreadyAdded = selected.some((item) => item.id === tech.id)
-		if (alreadyAdded) return
+		if (alreadyAdded) {
+			toast.info(`${tech.name} is already in your stack`)
+			return
+		}
 		setSelected([...selected, tech])
+		toast.success(`${tech.name} added to your stack`)
 	}
 
 	const handleRemove = (id: string) => {
+		const tech = selected.find((item) => item.id === id)
 		setSelected(selected.filter((item) => item.id !== id))
+		if (tech) toast.warn(`${tech.name} removed from your stack`)
 	}
 
 	const handleRemoveAll = () => {
 		setSelected([])
+		toast.warn('Your stack has been cleared')
 	}
 
 	return (
 		<div>
+			<ToastContainer position='top-right' autoClose={2000} />
 			<Navbar />
 			<Hero />
 
