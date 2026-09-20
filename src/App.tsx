@@ -48,11 +48,11 @@ const App = () => {
 			<Navbar />
 			<Hero />
 
-			<section className='container mx-auto px-4 py-10'>
-				<h2 className='text-2xl md:text-3xl font-bold text-gray-900'>
+			<section className='max-w-7xl mx-auto px-4 py-10'>
+				<h2 className='text-2xl md:text-3xl font-bold text-gray-900 text-center lg:text-left'>
 					Explore the <span className='text-brand-gradient'>Technologies</span>
 				</h2>
-				<p className='mt-2 text-gray-600'>
+				<p className='mt-2 text-gray-600 text-center lg:text-left'>
 					Pick one technology per category to build your ideal stack.
 				</p>
 
@@ -79,7 +79,8 @@ const App = () => {
 					)}
 				</div>
 			</section>
-				<Footer />
+
+			<Footer />
 		</div>
 	)
 }

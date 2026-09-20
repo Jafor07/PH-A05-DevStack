@@ -12,12 +12,14 @@ const Sidebar = ({ selected, onRemove, onRemoveAll }: SidebarProps) => {
 		<div className='border border-gray-200 rounded-xl p-5 lg:sticky lg:top-24'>
 			<h3 className='font-semibold text-gray-900'>Your Stack</h3>
 			<p className='text-xs text-gray-500 mt-1'>
-				{selected.length} Technology Selected
+				{selected.length === 0
+					? 'No technologies selected yet.'
+					: `${selected.length} Technology Selected`}
 			</p>
 
 			{selected.length === 0 ? (
-				<p className='mt-6 text-sm text-gray-400 text-center'>
-					Your stack is empty. Add a technology to get started.
+				<p className='mt-6 text-sm text-gray-400 text-center border border-dashed border-gray-200 rounded-lg py-6'>
+					Your stack is empty.
 				</p>
 			) : (
 				<ul className='mt-4 flex flex-col gap-3'>

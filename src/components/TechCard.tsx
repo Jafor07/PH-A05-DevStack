@@ -34,11 +34,11 @@ const TechCard = ({ tech, isAdded, onAdd }: TechCardProps) => {
 				disabled={isAdded}
 				className={
 					isAdded
-						? 'mt-4 bg-gray-100 text-gray-400 text-sm font-medium py-2 rounded-lg cursor-not-allowed'
+						? 'mt-4 bg-rose-50 text-rose-500 border-2 border-rose-200 text-sm font-medium py-2 rounded-lg cursor-not-allowed'
 						: 'mt-4 bg-gray-900 text-white text-sm font-medium py-2 rounded-lg hover:bg-gray-800 transition-colors'
 				}
 			>
-				{isAdded ? 'Added' : 'Add to Stack'}
+				{isAdded ? '✓ Added to Stack' : 'Add to Stack'}
 			</button>
 		</div>
 	)
